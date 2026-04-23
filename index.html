@@ -11,6 +11,7 @@
     <header class="header">
       <div class="container header__row">
         <div class="logo">
+          <span class="logo__top-text">FREE LANCE</span>
           <img src="img/Logo.png" alt="Logo" />
         </div>
 
@@ -21,7 +22,10 @@
           <a href="#">Contacts</a>
         </nav>
 
-        <a href="#" class="btn">Sign Up</a>
+        <div class="header__auth">
+          <a href="#" class="header__login">Log In</a>
+          <a href="#" class="btn">Sign Up</a>
+        </div>
       </div>
     </header>
 
@@ -34,12 +38,25 @@
 
             <div class="hero__buttons">
               <a href="#" class="btn">Get Started</a>
-              <a href="#" class="btn btn-outline">Learn More</a>
+              <a href="#" class="btn-play">
+                <span class="play-icon"></span>
+                <span class="play-text">Learn More</span>
+              </a>
             </div>
           </div>
-
-          <div class="hero__img">
-            <img src="img/man.png" alt="Man working" />
+          <div class="hero__img-container">
+            <img src="img/man.png" alt="Man working" class="man-img" />
+            <img
+              src="img/Group 7.png"
+              alt=""
+              class="hero__stats-card growth-card"
+            />
+            <img
+              src="img/Group 4.png"
+              alt=""
+              class="hero__stats-card clients-card"
+            />
+            <img src="img/Vector.png" alt="" class="hero__arrow" />
           </div>
         </div>
       </section>
@@ -52,21 +69,33 @@
             <div class="card">
               <img src="img/Activity.png" alt="Design" />
               <h3>Graphic Design</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                dui mi, bibendum eu erat id, ultricies semper metus. Nunc
+                dapibus laoreet dolor nec imperdiet.
+              </p>
               <a href="#" class="btn">Learn More</a>
             </div>
 
             <div class="card">
               <img src="img/Video.png" alt="Video" />
               <h3>Video Editing</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                dui mi, bibendum eu erat id, ultricies semper metus. Nunc
+                dapibus laoreet dolor nec imperdiet.
+              </p>
               <a href="#" class="btn">Learn More</a>
             </div>
 
             <div class="card">
               <img src="img/Chart.png" alt="Marketing" />
               <h3>Digital Marketing</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                dui mi, bibendum eu erat id, ultricies semper metus. Nunc
+                dapibus laoreet dolor nec imperdiet.
+              </p>
               <a href="#" class="btn">Learn More</a>
             </div>
           </div>
@@ -89,53 +118,129 @@
 
       <section class="testimonials">
         <div class="container">
+          <p class="section-subtitle">TESTIMONIALS</p>
           <h2>What Clients say about us</h2>
 
           <div class="testimonials__grid">
             <div class="review">
-              <img src="img/Userpic (6).svg" alt="User" />
-              <p>Great service and support</p>
+              <img
+                src="img/Userpic (6).svg"
+                alt="Rayhan Curran"
+                class="review__avatar"
+              />
+              <div class="review__content">
+                <p class="review__text">
+                  Get a fully retina ready site when you build with Startup
+                  Framework. Websites look sharper and more gorgeous on devices
+                  with retina display support
+                </p>
+                <p class="review__author">RAYHAN CURRAN</p>
+              </div>
             </div>
 
             <div class="review">
-              <img src="img/Userpic (9).svg" alt="User" />
-              <p>Very professional team</p>
+              <img
+                src="img/Userpic (9).svg"
+                alt="Kayley Frame"
+                class="review__avatar"
+              />
+              <div class="review__content">
+                <p class="review__text">
+                  As a business targeting high net worth individuals, we were
+                  looking for a slick, cool and mini-malistic design for our
+                  website
+                </p>
+                <p class="review__author">KAYLEY FRAME</p>
+              </div>
             </div>
 
             <div class="review">
-              <img src="img/Userpic (7).svg" alt="User" />
-              <p>Amazing experience</p>
+              <img
+                src="img/Userpic (7).svg"
+                alt="Gene Whitfield"
+                class="review__avatar"
+              />
+              <div class="review__content">
+                <p class="review__text">
+                  The most important part of the Startup Framework is the
+                  samples
+                </p>
+                <p class="review__author">GENE WHITFIELD</p>
+              </div>
             </div>
 
             <div class="review">
-              <img src="img/Userpic (8).svg" alt="User" />
-              <p>Highly recommend</p>
+              <img
+                src="img/Userpic (8).svg"
+                alt="Allan Kim"
+                class="review__avatar"
+              />
+              <div class="review__content">
+                <p class="review__text">
+                  I've built my website with Startup just in one day, and it was
+                  ready-to-go.
+                </p>
+                <p class="review__author">ALLAN KIM</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
       <section class="team">
         <div class="container">
+          <p class="section-subtitle">OUR TEAM</p>
           <h2>Meet The Team</h2>
 
           <div class="team__grid">
             <div class="member">
-              <img src="img/Mask.png" alt="Team member" />
-              <h3>Name</h3>
-              <p>Position</p>
+              <div class="member__top">
+                <img
+                  src="img/Mask.png"
+                  alt="Vanessa Laird"
+                  class="member__avatar"
+                />
+                <h3>Vanessa Laird</h3>
+                <p>UI DESIGNER</p>
+              </div>
+              <div class="member__social">
+                <a href="#" class="social-link social-link--twitter">𝕏</a>
+                <a href="#" class="social-link social-link--facebook">ⓕ</a>
+                <a href="#" class="social-link social-link--dribbble">🏀</a>
+              </div>
             </div>
 
             <div class="member">
-              <img src="img/Mask (1).png" alt="Team member" />
-              <h3>Name</h3>
-              <p>Position</p>
+              <div class="member__top">
+                <img
+                  src="img/Mask (1).png"
+                  alt="Mason Campbell"
+                  class="member__avatar"
+                />
+                <h3>Mason Campbell</h3>
+                <p>UI DESIGNER</p>
+              </div>
+              <div class="member__social">
+                <a href="#" class="social-link social-link--twitter">𝕏</a>
+                <a href="#" class="social-link social-link--facebook">ⓕ</a>
+                <a href="#" class="social-link social-link--dribbble">🏀</a>
+              </div>
             </div>
 
             <div class="member">
-              <img src="img/Mask (2).png" alt="Team member" />
-              <h3>Name</h3>
-              <p>Position</p>
+              <div class="member__top">
+                <img
+                  src="img/Mask (2).png"
+                  alt="Irea Evans"
+                  class="member__avatar"
+                />
+                <h3>Irea Evans</h3>
+                <p>CLIENT MANAGER</p>
+              </div>
+              <div class="member__social">
+                <a href="#" class="social-link social-link--twitter">𝕏</a>
+                <a href="#" class="social-link social-link--facebook">ⓕ</a>
+                <a href="#" class="social-link social-link--dribbble">🏀</a>
+              </div>
             </div>
           </div>
         </div>
@@ -143,20 +248,55 @@
 
       <section class="newsletter">
         <div class="container newsletter__row">
-          <img src="img/Frame.png" alt="Mail" />
+          <div class="newsletter__img">
+            <img src="img/Frame.png" alt="Mail" />
+          </div>
 
-          <div>
+          <div class="newsletter__content">
             <h2>Subscribe Our Newsletter</h2>
-            <input type="email" placeholder="Your Email here..." />
-            <br />
-            <a href="#" class="btn">Subscribe</a>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor...
+            </p>
+
+            <div class="newsletter__form">
+              <input
+                type="email"
+                class="newsletter__input"
+                placeholder="Your Email here..."
+              />
+              <button class="btn btn--submit">Subscribe Our Newsletter</button>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <p>© 2026 Pixelab</p>
+      <div class="container footer__row">
+        <div class="footer__logo">
+          <img src="img/Logo.png" alt="Pixelab" />
+        </div>
+
+        <div class="footer__copyright">
+          <p>© 2026 Pixelab. All rights reserved.</p>
+        </div>
+
+        <nav class="footer__nav">
+          <a href="#">Portfolio</a>
+          <a href="#">How it Works</a>
+          <a href="#">Pricing</a>
+          <a href="#">About</a>
+          <a href="#">Login</a>
+        </nav>
+      </div>
+
+      <div class="container">
+        <p class="footer__subtext">
+          Startup Framework contains components and complex blocks which can
+          easily be integrated into almost any design.
+        </p>
+      </div>
     </footer>
   </body>
 </html>

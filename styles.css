@@ -44,22 +44,103 @@ body {
   font-weight: 500;
 }
 
-/* BUTTON */
+/* Контейнер для Log In та Sign Up */
+.header__auth {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Відстань між написом Log In та кнопкою */
+}
+
+/* Стиль самого напису Log In */
+.header__login {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1f2937; /* Темний колір як у меню */
+  transition: color 0.3s ease;
+}
+
+.header__login:hover {
+  color: #ff6b00; /* Колір при наведенні (як ваша кнопка) */
+}
+
+/* Стиль вашої рудої кнопки (переконайтеся, що вона не має зайвих відступів) */
 .btn {
-  background: var(--orange);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 6px;
+  padding: 12px 25px;
+  background-color: #ff6b00;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.btn-outline {
-  background: none;
-  border: 2px solid var(--orange);
-  color: var(--orange);
+/* Контейнер для кнопок */
+.hero__buttons {
+  display: flex;
+  align-items: center; /* Вирівнюємо кнопки по центру по вертикалі */
+  gap: 30px; /* Збільшуємо відстань між кнопками як на макеті */
 }
 
+/* Стиль нової кнопки Play */
+.btn-play {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.btn-play:hover {
+  opacity: 0.8;
+}
+
+/* Кругла іконка програвання */
+.play-icon {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  background-color: #555555; /* Темно-сірий фон круга */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Малюємо білий трикутник всередині іконки через CSS */
+.play-icon::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 14px;
+  border-color: transparent transparent transparent #ffffff;
+  margin-left: 4px;
+}
+
+/* Помаранчева лінія-півколо навколо іконки */
+.play-icon::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid #ff6b00; /* Ваш основний помаранчевий колір */
+  border-radius: 50%;
+  border-bottom-color: transparent; /* Робимо лінію розірваною */
+  border-right-color: transparent;
+  transform: rotate(-45px);
+}
+
+/* Стиль тексту поруч з іконкою */
+.play-text {
+  font-weight: 600;
+  color: #000000; /* Чорний колір тексту як на макеті */
+  font-size: 16px;
+}
+
+/* HERO (Flexbox) */
 /* HERO (Flexbox) */
 .hero {
   padding: 60px 0;
@@ -88,11 +169,74 @@ body {
 
 .hero__buttons {
   display: flex;
-  gap: 15px;
+  align-items: center;
+  gap: 30px;
 }
 
-.hero__img img {
-  width: 380px;
+/* --- ФІНАЛЬНА ВЕРСІЯ ДЛЯ ГРАФІКИ HERO --- */
+
+/* Контейнер-якір: центрує композицію і тримає картки на місці */
+/* Робимо так, щоб на малих екранах картки не створювали горизонтальну прокрутку */
+/* --- ФІНАЛЬНА ВЕРСІЯ ДЛЯ ГРАФІКИ HERO --- */
+
+/* Контейнер-якір: центрує композицію і тримає картки на місці */
+
+.hero__img-container {
+  position: relative;
+  width: 100%;
+  max-width: 480px; /* Достатня ширина для чоловіка + виступів карток */
+  margin-left: auto; /* Притискає фото до правого краю, створюючи простір для тексту */
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Основне фото чоловіка */
+
+.man-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Спільні стилі для літаючих карток (без помилок і цитат) */
+
+.hero__stats-card {
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background: #ffffff; /* Додаємо фон, щоб не було "прозорих квадратів" */
+}
+
+/* Картка Growth (зверху-зліва) */
+
+.growth-card {
+  top: 10%;
+  left: -10%; /* Відсотки роблять позицію стабільною на різних екранах */
+  width: 180px;
+}
+
+/* Картка Clients (знизу-зліва) */
+
+.clients-card {
+  bottom: 15%;
+  left: -15%;
+  width: 200px;
+}
+
+/* Стрілка: чітко біля голови */
+
+.hero__arrow {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  width: 80px;
+  z-index: 5;
+  pointer-events: none;
 }
 
 /* SERVICES (Grid) */
@@ -128,104 +272,359 @@ body {
   margin-bottom: 15px;
 }
 
-/* INFO (Flexbox) */
-.info {
-  padding: 60px 0;
-}
-
+/* Контейнер ряду */
 .info__row {
   display: flex;
-  align-items: center;
+  align-items: center; /* Центрує текст і картинку по вертикалі один відносно одного */
   justify-content: space-between;
   gap: 50px;
+  padding: 80px 0; /* Додаємо відступи зверху/знизу для всієї секції */
 }
 
+/* Блок з текстом */
 .info__text {
-  max-width: 450px;
+  flex: 0 1 450px; /* Не дає тексту розтягуватися більше ніж на 450px */
+  text-align: left; /* Вирівнювання тексту по лівому краю */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* ВАЖЛИВО: притискає кнопку та заголовок до лівого краю */
+}
+
+.info__text h2 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--dark);
+}
+
+.info__text p {
+  margin-bottom: 30px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* Блок з зображенням */
+.info__img {
+  flex: 0 1 600px; /* Даємо більше простору для картинки */
 }
 
 .info__img img {
-  width: 320px;
+  width: 100%; /* Картинка займає весь свій контейнер */
+  height: auto;
+  border-radius: 12px; /* Додаємо заокруглення як на макеті */
+}
+
+/* Стиль кнопки Explore (якщо вона має бути білою з рамкою) */
+.btn-outline {
+  background: transparent;
+  color: var(--dark);
+  border: 1px solid #e5e7eb; /* Світло-сіра рамка як у Figma */
+  padding: 12px 30px;
+  display: inline-block; /* Щоб кнопка не розтягувалася на всю ширину */
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #f9fafb;
+  border-color: var(--gray);
 }
 
 /* TESTIMONIALS (Grid) */
 .testimonials {
-  padding: 60px 0;
+  padding: 100px 0;
   text-align: center;
 }
 
+.testimonials h2 {
+  font-size: 42px;
+  margin-bottom: 60px;
+  color: #1e266d;
+}
+
 .testimonials__grid {
-  margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
+  grid-template-columns: 1fr 1fr; /* Дві колонки */
+  gap: 60px 40px; /* Відступи між відгуками */
+  text-align: left; /* Текст всередині сітки ліворуч */
 }
 
 .review {
-  background: var(--white);
-  padding: 20px;
-  border-radius: 10px;
-
   display: flex;
-  align-items: center;
-  gap: 15px;
+  align-items: flex-start;
+  gap: 25px;
 }
 
-.review img {
-  width: 50px;
-  border-radius: 50%;
+.review__avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px; /* Квадратні з легким закругленням, як на макеті */
+  object-fit: cover;
+}
+
+.review__content {
+  flex: 1;
+}
+
+.review__text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1e266d;
+  margin-bottom: 15px;
+}
+
+.review__author {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #9ca3af;
+  text-transform: uppercase;
+}
+
+/* Адаптивність для телефонів */
+@media (max-width: 768px) {
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* TEAM (Grid) */
 .team {
+  padding: 80px 0;
   text-align: center;
-  padding: 60px 0;
 }
 
-.team__grid {
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.member {
-  background: var(--white);
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.member img {
-  width: 100px;
-  border-radius: 50%;
+.section-subtitle {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #9ca3af;
   margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.team h2 {
+  font-size: 42px;
+  margin-bottom: 50px;
+  color: #1f2937;
+}
+
+/* Налаштування сітки */
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  gap: 30px;
+}
+
+/* Стиль картки */
+.member {
+  border: 1px solid #f3f4f6;
+  border-radius: 10px;
+  overflow: hidden; /* Щоб контент не виходив за рамки */
+  transition: transform 0.3s ease;
+  background-color: #ffffff; /* Додаємо фон */
+}
+
+.member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.member__top {
+  padding: 40px 20px;
+}
+
+.member__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; /* Кругле фото */
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.member h3 {
+  font-size: 20px;
+  color: #2d3436;
+  margin-bottom: 8px;
+}
+
+.member p {
+  font-size: 12px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Нижня панель з текстовими іконками */
+.member__social {
+  display: flex;
+  border-top: 1px solid #f3f4f6;
+  margin-top: auto; /* Щоб панель була завжди знизу */
+}
+
+/* Загальний стиль для текстового посилання-іконки */
+.social-link {
+  flex: 1;
+  padding: 15px;
+  border-right: 1px solid #f3f4f6;
+  text-decoration: none;
+  font-size: 18px; /* Розмір "емодзі" або тексту */
+  color: #cbd5e1; /* Світло-сірий колір як на макеті */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.social-link:last-child {
+  border-right: none;
+}
+
+/* Ефект при наведенні - іконка стає темнішою */
+.social-link:hover {
+  color: #1f2937; /* Темно-сірий колір */
+  background-color: #f9fafb;
+}
+
+/* Додаткові налаштування для емодзі, щоб вони не змінювали розмір */
+.social-link--dribbble {
+  font-family: Arial, sans-serif; /* Для кращого відображення емодзі */
 }
 
 /* NEWSLETTER (Flexbox) */
 .newsletter {
-  padding: 60px 0;
+  padding: 100px 0;
+  background: #ffffff;
 }
 
 .newsletter__row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
+  gap: 80px; /* Великий простір між конвертом і текстом */
 }
 
-.newsletter input {
-  padding: 12px;
-  margin-top: 15px;
-  width: 250px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+.newsletter__img img {
+  width: 100%;
+  max-width: 450px; /* Робимо конверт великим як на макеті */
+}
+
+.newsletter__content {
+  flex: 1;
+  max-width: 550px;
+}
+
+.newsletter__content h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.newsletter__content p {
+  color: #6b7280;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Стилі для форми (інпут + кнопка під ним) */
+.newsletter__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.newsletter__input {
+  width: 100%;
+  padding: 20px 25px;
+  border-radius: 50px; /* Круглі краї як на макеті */
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 16px;
+  outline: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Легка тінь */
+}
+
+.btn--submit {
+  width: 100%; /* Кнопка на всю ширину під інпутом */
+  padding: 18px;
+  border-radius: 10px; /* Квадратніша кнопка як у Figma */
+  font-weight: 600;
+  font-size: 16px;
+  background: var(--orange);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn--submit:hover {
+  transform: translateY(-2px);
 }
 
 /* FOOTER */
 .footer {
-  text-align: center;
-  padding: 20px;
-  color: var(--gray);
+  padding: 40px 0;
+  background-color: #ffffff;
+  border-top: 1px solid #f3f4f6; /* Тонка лінія зверху */
+  margin-top: 50px;
+}
+
+.footer__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Розносить лого, текст і навігацію по боках */
+  padding-bottom: 30px;
+}
+
+/* Стилі для логотипу у футері */
+.footer__logo img {
+  height: 24px;
+  width: auto;
+}
+
+/* Копірайт по центру */
+.footer__copyright p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Навігація футера */
+.footer__nav {
+  display: flex;
+  gap: 25px;
+}
+
+.footer__nav a {
+  text-decoration: none;
+  color: #1f2937;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.footer__nav a:hover {
+  color: var(--orange);
+}
+
+/* Сірий текст у самому низу */
+.footer__subtext {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 20px;
+  border-top: 1px solid #f9fafb;
+  padding-top: 20px;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+  .footer__row {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer__nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 /* АДАПТИВ */
